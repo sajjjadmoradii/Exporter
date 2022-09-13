@@ -22,9 +22,13 @@ if(!in_array($format,$whitelist)){
   return;
 }
 
+$data = [
+  'name' => $name,
+  'fatherName' => $fatherName
+];
 
-
-$exporter = new Exporter\WordExporter([$name,$fatherName]);
+$exporter = new WordExporter($data);
+$exporter->export();
 
 // switch($format){
 //   case 'Word':

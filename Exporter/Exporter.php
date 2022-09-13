@@ -9,7 +9,7 @@ interface Exportable{
 
 abstract class Exporter implements Exportable{
     protected $format;
-    protected $date;
+    protected $data;
 
 
     public function __construct($data){
@@ -23,9 +23,11 @@ abstract class Exporter implements Exportable{
    
 
     public function is_valid(){
-        foreach($this->data as $field){
+
+        foreach($this->data as $key => $field){
             if(empty($field)){
                 return false;
+
             }
         }
         return true;
